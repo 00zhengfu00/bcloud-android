@@ -1,4 +1,4 @@
-package com.bcloud.network;
+package com.bcloud.core;
 
 /**
  * Ö÷Ò³Ãæ

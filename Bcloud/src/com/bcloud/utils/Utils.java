@@ -1,5 +1,7 @@
 package com.bcloud.utils;
 
+import java.util.Random;
+
 /**
  * 一些常用函数.
  * 
@@ -25,5 +27,15 @@ public class Utils {
 	 */
 	public static String getTimeStamp() {
 		return Long.toString(System.currentTimeMillis());
+	}
+	
+	private static final int MAX_RANDOM_NUM = 58535;
+	private static final int MIN_RANDOM_NUM =  52000;
+	
+	/**
+	 * ppui_ligintime 这个字段, 是一个随机数.
+	 */
+	public static String getPpuiLogintime() {
+		return String.valueOf(Math.random()*(MAX_RANDOM_NUM - MIN_RANDOM_NUM) + MIN_RANDOM_NUM);
 	}
 }

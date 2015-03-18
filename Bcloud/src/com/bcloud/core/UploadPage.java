@@ -1,4 +1,4 @@
-package com.bcloud.network;
+package com.bcloud.core;
 
 /**
  * 上传文件的界面.

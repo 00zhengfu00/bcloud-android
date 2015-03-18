@@ -16,6 +16,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
 
 import android.util.Log;
 
@@ -63,7 +64,7 @@ public class BcloudNetWork {
 			/* 初始化httpPost 请求 */         
 			DefaultHttpClient httpClient = new DefaultHttpClient();
 			/* 初始化 httppost 的 参数 */
-			UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(params, "utf-8");
+			UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(params, HTTP.UTF_8);
 			httpPost.setEntity(formEntity);
 			/* 开始执行httpclient!! */
 			HttpResponse httpResponse = httpClient.execute(httpPost);

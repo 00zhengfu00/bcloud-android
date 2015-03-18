@@ -1,4 +1,4 @@
-package com.bcloud.network;
+package com.bcloud.core;
 
 /**
  * 下载任务管理器, 处理下载任务的后台调度. <br>

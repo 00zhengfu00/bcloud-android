@@ -24,6 +24,7 @@ import android.widget.Button;
 
 import com.bcloud.network.BcloudConstant;
 import com.bcloud.network.BcloundAuth;
+import com.bcloud.network.ErrorMsg;
 import com.loopj.android.http.AsyncHttpClient;
 
 public class MainActivity extends Activity {
@@ -34,14 +35,13 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		Button btn = (Button) findViewById(R.id.button1);
 		btn.setOnClickListener(new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				new LoginAsyncTask().execute(BcloudConstant.REFERER);
 			}
 		});
 	}
-
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
 		
 		@Override
 		protected String doInBackground(String... params) {
-			BcloundAuth.checkLogin("hailongqiu");
+			BcloundAuth.postLogin("hailongqiu", "123456");
 			
 //			try {
 //				HttpClient client = new DefaultHttpClient();
