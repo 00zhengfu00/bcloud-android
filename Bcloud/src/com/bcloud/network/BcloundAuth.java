@@ -51,8 +51,9 @@ public class BcloundAuth {
 	public static void postLogin(String user, String pass) {
 		String url = BcloudConstant.PASSPORT_LOGIN;
 		url += "staticpage=" + STATICPAGE_URL ;
-		url 
+//		url 
 	}
+	
 	
 	public static void getPublicKey() {
 //		BcloudNetWork.doPost(url, headers, params);
