@@ -25,6 +25,7 @@ import android.widget.Button;
 import com.bcloud.network.BcloudConstant;
 import com.bcloud.network.BcloundAuth;
 import com.bcloud.network.ErrorMsg;
+import com.bcloud.network.RequestCookie;
 import com.loopj.android.http.AsyncHttpClient;
 
 public class MainActivity extends Activity {
@@ -38,6 +39,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				new LoginAsyncTask().execute(BcloudConstant.REFERER);
+				Log.e(">>>>", ">>>.cookie: " + new RequestCookie().headerOutput());
 			}
 		});
 	}

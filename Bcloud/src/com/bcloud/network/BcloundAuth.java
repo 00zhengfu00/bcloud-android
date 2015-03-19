@@ -89,6 +89,16 @@ public class BcloundAuth {
 		BcloudNetWork.doPost(url, headers, params);
 	}
 	
+	/**
+	 * 
+	 * @return - ·µ»Øcookie: HOSUPPORT=1; expires=Mon, 05-Jun-2023 07:30:00 GMT;
+	 *         path=/; domain=passport.baidu.com; httponly
+	 */
+	public static String getBaiDuID() {
+		String cookie = "";
+		// Set-Cookie
+		return cookie;
+	}
 	
 	public static void getPublicKey() {
 //		BcloudNetWork.doPost(url, headers, params);
