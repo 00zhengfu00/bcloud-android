@@ -22,6 +22,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.bcloud.event.BcloudNotifyEvent;
+import com.bcloud.event.BcloudNotifyHandler;
+import com.bcloud.event.BcloudNotifyHandlerProxy;
 import com.bcloud.network.BcloudConstant;
 import com.bcloud.network.BcloundAuth;
 import com.bcloud.network.ErrorMsg;
@@ -29,12 +32,15 @@ import com.bcloud.network.RequestCookie;
 import com.loopj.android.http.AsyncHttpClient;
 
 public class MainActivity extends Activity {
-
+	
+	BcloudNotifyHandlerProxy mBcloudNotifyHandlerProxy;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		Button btn = (Button) findViewById(R.id.button1);
+		mBcloudNotifyHandlerProxy = new BcloudNotifyHandlerProxy(this);
 		btn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -50,6 +56,11 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	@BcloudNotifyHandler(BcloudNotifyEvent.Type.LOGIN_SUCCESS)
+	public void loginSuccess(BcloudNotifyEvent event) {
+		Log.e(">>>>>>", ">>>>>>type:" + event.getType() + "登陆成功了！！畜生!!");
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
@@ -103,6 +114,7 @@ public class MainActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(String result) {
+			mBcloudNotifyHandlerProxy.onNotifyEvent(new BcloudNotifyEvent(BcloudNotifyEvent.Type.LOGIN_SUCCESS, "登陆成功!!"));
 			Log.i(">>>>>>>", "onPreExecute() called" + result);
 		}
 	}
