@@ -103,4 +103,5 @@ public class BcloundAuth {
 	public static void getPublicKey() {
 //		BcloudNetWork.doPost(url, headers, params);
 	}
+	
 }

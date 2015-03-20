@@ -18,6 +18,13 @@ public class BcloudNotifyEvent extends BcloudEvent {
 	}
 
 	public enum Type {
+		REQUEST_COOKIE,
+		GET_BAIDUID,
+		GET_TOKEN,
+		GET_UBI,
+		CHECK_LOGIN,
+		PUBLIC_KEY,
+		POST_LOGIN,
 		/* µÇÂ½³É¹¦ */
 		LOGIN_SUCCESS,
 		/* ÍøÂç´íÎó */
